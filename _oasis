@@ -1,0 +1,15 @@
+OASISFormat: 0.4
+Name:        source_model_decompiler
+Version:     0.0.1
+Synopsis:    Decompile MDL files into their constituent parts
+Authors:     Tony Aldridge <tony@angry-lawyer.com>
+License:     MIT
+AlphaFeatures: ocamlbuild_more_args
+
+Executable ocamlmdldecompiler
+  Path:         ./src
+  BuildTools:   ocamlbuild
+  MainIs:       main.ml
+  BuildDepends: core
+
+XOCamlbuildExtraArgs: -use-ocamlfind -classic-display -syntax camlp4o -pkg core -pkg sexplib.syntax,comparelib.syntax,fieldslib.syntax,variantslib.syntax -pkg bin_prot.syntax -tag thread -tag debug -tag annot -tag bin_annot -tag short_paths
